@@ -46,7 +46,7 @@ const Sessions = (props: PropsInterface) => {
     <div className="sessions wrapper">
       <div className="sessions--content">
         <Header logo={Logo} name="Sessions"/>
-        <div className="sessions--list-wrapper">
+        <div className="sessions--list">
           <div className="header-row">
             <div className="header-row--title country">
               <p>Country</p>
@@ -67,18 +67,18 @@ const Sessions = (props: PropsInterface) => {
               <p>Session ID</p>
             </div>
           </div>
-          <div className="list">
-            <div className="list--item">
+          <div className="list-block">
+            <div className="list-block--item">
               <div className="value country">
                 <div className="country-placeholder"></div>
                 <p>Lithuania</p>
               </div>
               <div className="value protocol">
                 <p>
-                  <span className="protocol-star-icon"><StarIcon/></span>
-                   4.2
+                  <span className="star-icon"><StarIcon/></span>
+                  4.2
                   <span
-                className="protocol-out-of"
+                    className="out-of"
                   >
                     / 5.0
                   </span>
@@ -89,7 +89,7 @@ const Sessions = (props: PropsInterface) => {
               <div className="value transfered"><p>14.2Gb</p></div>
               <div className="value id"><p>326cff6d</p></div>
             </div>
-            <div className="list--item">
+            <div className="list-block--item">
               <div className="value country">
                 <div className="country-placeholder filled">
                   <Flag/>
@@ -98,10 +98,10 @@ const Sessions = (props: PropsInterface) => {
               </div>
               <div className="value protocol">
                 <p>
-                  <span className="protocol-star-icon"><StarIcon/></span>
+                  <span className="star-icon"><StarIcon/></span>
                   4.2
                   <span
-                    className="protocol-out-of"
+                    className="out-of"
                   >
                     / 5.0
                   </span>
