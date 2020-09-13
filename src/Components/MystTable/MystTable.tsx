@@ -26,7 +26,7 @@ interface Props {
 }
 
 const header = (h: TableHeader) => (
-    <div className={'header-row--title ' + h.className}>
+    <div className={'myst-table__header-cell'}>
         <p>{h.name}</p>
     </div>
 );
@@ -42,34 +42,38 @@ const MystTable: FC<Props> = ({
 }) => {
     return (
         <div className="myst-table">
-            <div className="header-row">{headers.map(header)}</div>
-            <div className="content">{rows}</div>
-            <div className="pagination-row">
-                <LoadingButton
-                    disabled={currentPage === 1}
-                    className="prev pagination-button"
-                    onClick={handlePrevPageButtonClick}
-                >
-                    <p>Prev</p>
-                </LoadingButton>
-                <div className="pagination">
-                    <PaginationMaterial
-                        page={currentPage}
-                        hideNextButton={true}
-                        hidePrevButton={true}
-                        count={lastPage}
-                        variant="outlined"
-                        shape="rounded"
-                        onChange={onPageClick}
-                    />
+            <div className="myst-table__header-rows">{headers.map(header)}</div>
+            <div className="myst-table__content">
+                <div className="myst-table__content__scrollable">
+                    {rows}
                 </div>
-                <LoadingButton
-                    disabled={currentPage === lastPage}
-                    className="next pagination-button"
-                    onClick={handleNextPageButtonClick}
-                >
-                    <p>Next</p>
-                </LoadingButton>
+                <div className="myst-table__pagination">
+                    <LoadingButton
+                        disabled={currentPage === 1}
+                        className="prev myst-table__pagination__button prev pagination-button"
+                        onClick={handlePrevPageButtonClick}
+                    >
+                        <p>Prev</p>
+                    </LoadingButton>
+                    <div className="myst-table__pagination">
+                        <PaginationMaterial
+                            page={currentPage}
+                            hideNextButton={true}
+                            hidePrevButton={true}
+                            count={lastPage}
+                            variant="outlined"
+                            shape="rounded"
+                            onChange={onPageClick}
+                        />
+                    </div>
+                    <LoadingButton
+                        disabled={currentPage === lastPage}
+                        className="next myst-table__pagination__button"
+                        onClick={handleNextPageButtonClick}
+                    >
+                        <p>Next</p>
+                    </LoadingButton>
+                </div>
             </div>
         </div>
     );

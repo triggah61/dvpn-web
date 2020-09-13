@@ -11,20 +11,20 @@ import { ReactComponent as Logo } from '../../../assets/images/authenticated/pag
 import MystTable from '../../../Components/MystTable/MystTable';
 
 const row = () => (
-    <div className="content--row">
-        <div className="value">
+    <div className="myst-table__content__row">
+        <div className="myst-table__content__row__row-value">
             <p>1</p>
         </div>
-        <div className="value">
+        <div className="myst-table__content__row__row-value">
             <p>2</p>
         </div>
-        <div className="value">
+        <div className="myst-table__content__row__row-value">
             <p>3</p>
         </div>
-        <div className="value">
+        <div className="myst-table__content__row__row-value">
             <p>4</p>
         </div>
-        <div className="value">
+        <div className="myst-table__content__row__row-value">
             <p>5</p>
         </div>
     </div>
@@ -43,7 +43,7 @@ const Wallet: FC = ({}) => {
                         { name: 'Fee' },
                         { name: 'Received Amount' },
                     ]}
-                    rows={[1, 2, 3].map(row)}
+                    rows={[1, 2, 3, 4, 5, 6 ,7 ,8 ,9 ,10 ,11 ,12 ,13].map(row)}
                     currentPage={1}
                     lastPage={10}
                     handlePrevPageButtonClick={() => {}}
